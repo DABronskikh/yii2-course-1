@@ -35,11 +35,11 @@ $config = [
             /*'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.mail.ru',
-                'username' => 'yii2-demo@mail.ru',
-                'password' => 'gb-yii2',
-                'port' => 465,
-                'encryption' => 'tls',
+                'host' => 'smtp.gmail.com',
+                'username' => 'yii2mailtest@gmail.com',
+                'password' => '2019-02-16',
+                'port' => 587,
+                'encryption' => 'ssl',
             ],*/
         ],
         'log' => [
@@ -52,14 +52,13 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
