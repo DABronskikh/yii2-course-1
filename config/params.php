@@ -2,5 +2,5 @@
 
 return [
     /*'adminEmail' => 'admin@example.com',*/
-    'adminEmail' => 'yii2-demo@mail.ru',
+    'adminEmail' => 'yii2mailtest@gmail.com',
 ];
