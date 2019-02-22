@@ -4,14 +4,28 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
+    //'language' => 'ru',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'bootstrap'],
     'aliases' => [
+        '@img' => '@app/web/img',
+        '@imgMin' => '@app/web/img/min',
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => \yii\i18n\PhpMessageSource::class,
+                    'basePath' => "@app/messages"
+                ]
+            ]
+        ],
+        'bootstrap' => [
+            'class' => \app\components\Bootstrap::class
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'rQgMeZbnaDTIuGAxefs1bwDgW45hq8En',
@@ -35,11 +49,11 @@ $config = [
             /*'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.mail.ru',
-                'username' => 'yii2-demo@mail.ru',
-                'password' => 'gb-yii2',
-                'port' => 465,
-                'encryption' => 'tls',
+                'host' => 'smtp.gmail.com',
+                'username' => 'yii2mailtest@gmail.com',
+                'password' => '2019-02-16',
+                'port' => 587,
+                'encryption' => 'ssl',
             ],*/
         ],
         'log' => [
@@ -52,14 +66,13 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
