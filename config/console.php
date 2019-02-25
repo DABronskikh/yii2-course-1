@@ -17,6 +17,10 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => true,
+        ],
         'log' => [
             'targets' => [
                 [

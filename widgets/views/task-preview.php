@@ -7,7 +7,8 @@
             <p><?= $model->discription ?></p>
             <hr>
             <p><?= $model->respionsble->username  ?></p>
-            <?= Html::a('<div></div>', ["view?id={$model->id}"], ['class' => 'list-group-item active']) ?>
+            <?/*= Html::a('<div></div>', ["view?id={$model->id}"], ['class' => 'list-group-item active']) */?>
+            <?= Html::a('<div></div>', \yii\helpers\Url::to(['tasks/view', 'id'=> $model->id]), ['class' => 'list-group-item active']) ?>
         </div>
     </div>
 </div>
